@@ -23,8 +23,11 @@
 
 1.  작업할 폴더 만들기
     > mkdir webpack-react-example && cd webpack-react-example ---> npm init -y
+    >
     > 이렇게 만들라고 하는데 그냥 일단 새로만들기 해서 폴더를 만든다
 2.  바벨 설정
     > 바벨은 개발 단계에서만 사용하므로 -D 붙여주기
+    >
     > npm i -D @babel/core @babel/preset-env @babel/preset-react
+    >
     > `NodeJS`에 입력하면 `package.json`파일 안에 `devDependencies`여기에 들어간다
