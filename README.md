@@ -72,7 +72,7 @@
     > `src/index.js`만들기
     > `npm start`하면 `dist`폴더 만들어지고 `bundle.[hash].js`파일 생성됨
 
-    > `npm i -D babel-loader(es6 를 es5 로 바꿔주는 바벨을 웹팩에서 사용할 수 있음) html-loader(웹팩이 html을 읽을 수 있게 해줌`) > `loader`은 `module`과 `rules`를 사용
+    > `npm i -D babel-loader(es6 를 es5 로 바꿔주는 바벨을 웹팩에서 사용할 수 있음) html-loader(웹팩이 html을 읽을 수 있게 해줌)` > `loader`은 `module`과 `rules`를 사용
 
         module: {
         rules: [
@@ -125,7 +125,7 @@
     // package.json
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1",
-        "start": "webpack-dev-server"
+        "start": "webpack serve --env development"
     },
 
 > `webpack.config.js`파일에 `devServer`추가~
@@ -137,3 +137,54 @@
     },
 
 > [더 많은 devServer 옵션 보기](https://webpack.js.org/configuration/dev-server/)
+
+4. React Start!
+
+> `npm i react react-dom` 설치
+
+    // src/index.js
+    import React from 'react';
+    import ReactDOM from 'react-dom';
+    import App from './App';
+    ReactDOM.render(<App />, document.getElementById('root'));
+
+    // src/App.js
+    import React from 'react';
+    const App = () => (
+    <div>
+        Hello, Webpack!
+    </div>
+    );
+    export default App;
+
+> `public/index.html`만들기 (`plugins`에 `template: 'public/index.html'`추가해줬기 때문에)
+
+    // public/index.html
+    <html lang="en">
+    <head>
+    <meta charset="UTF-8">
+    <title>Webpack-for-react</title>
+    </head>
+    <body>
+    <div id="root"></div> // 요건 꼭 넣어주기
+    </body>
+    </html>
+
+> 여기까지 하면 브라우저까 듸워지면서 'Hello, Webpack!'이 뜸!!!!
+
+# 정리
+
+1. 작업 폴더 만들기
+2. `npm init` > `package.json`파일 생성
+3. `npm i -D @babel/core @babel/preset-env @babel/preset-react` 설치
+4. ⭐`.babelrc`파일을 만들기 > `"presets": [ "@babel/preset-env", "@babel/preset-react" ]` 추가해주기
+5. `index.js`만들기
+6. `npm i -D webpack webpack-cli webpack-dev-server` 설치 > `webpack.config.js` 파일 만들기
+7. `npm i -D babel-loader`, `npm i -D html-webpack-plugin` 설치
+8. `webpack.config.js` 파일에 `module.exports = { entry, plugin, loader, output }` 추가
+9. `package.json` 에 `script`부분에 명령어 추가
+10. `npm i -D webpack-dev-server` 설치 > 9번에 명령어로 `"start":"webpack serve --env development"` 추가
+11. `webpack.config.js`파일에 `devServer`추가
+12. `npm i react react-dom` 설치
+13. `html` 파일 만들기 > `<div id='root'></div>` 만들어주기
+14. `npm start` 하면 브라우져 창이 뜸!
