@@ -1,17 +1,31 @@
+const HtmlWebpackPlugin = require("html-webpack-plugin");
+
+const port = process.env.PORT || 3000;
+
 module.exports = {
+  // 개발환경
   mode: "development",
+
+  // 애플리케이션 시작 경로
   entry: "./src/index.js",
+
+  // 번들된 파일 경로
+  output: {
+    filename: "bundle.[hash].js",
+  },
+
   module: {
     rules: [
       {
-        test: /\.(js|jsx)$/, //es6과 관련된 `loader`,`.js`와 함꼐 `.jsx`확장자도 같이 번들함
-        exclude: /node_modules/, //`/node_modules`은 제외
+        test: /\.(js|jsx)$/,
+        exclude: /node_modules/,
         use: {
           loader: "babel-loader",
         },
       },
+
       {
-        test: /\.html$/, //`html loader`
+        test: /\.html$/,
         use: [
           {
             loader: "html-loader",
@@ -23,17 +37,17 @@ module.exports = {
       },
     ],
   },
+
   plugins: [
     new HtmlWebpackPlugin({
-      template: "public/index.html", //public/index.html 를 템플릿으로 지정
+      template: "public/index.html",
     }),
   ],
+
+  // 개발 서버 설정
   devServer: {
     host: "localhost",
     port: port,
     open: true,
-  },
-  output: {
-    filename: "bundle.[hash].js",
   },
 };

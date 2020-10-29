@@ -34,7 +34,7 @@
     > `npm i -D @babel/core @babel/preset-env @babel/preset-react`
     >
     > `NodeJS`에 입력하면 `package.json`파일 안에 `devDependencies`여기에 들어간다
-    > `babel-plugin-dynamic-import-node`폴더에서 `.babelrc`파일을 찾는다
+    > ⭐`.babelrc`파일을 만든다
 
         {
         "presets": [
@@ -72,7 +72,7 @@
     > `src/index.js`만들기
     > `npm start`하면 `dist`폴더 만들어지고 `bundle.[hash].js`파일 생성됨
 
-    > `npm i -D babel-loader(es6 를 es5 로 바꿔주는 바벨을 웹팩에서 사용할 수 있음) html-loader(웹팩이 html을 읽을 수 있게 해줌` > `loader`은 `module`과 `rules`를 사용
+    > `npm i -D babel-loader(es6 를 es5 로 바꿔주는 바벨을 웹팩에서 사용할 수 있음) html-loader(웹팩이 html을 읽을 수 있게 해줌`) > `loader`은 `module`과 `rules`를 사용
 
         module: {
         rules: [
