@@ -1,0 +1,24 @@
+{
+  "name": "react-study",
+  "version": "1.0.0",
+  "description": "- 여러가지의 모듈(JS, CSS, HTML, Img 등)로 나눠서 작업 한 후 하나의 파일로 묶어서 브라우저가 읽을 수 있게 함",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/eunjin0212/React-Study.git"
+  },
+  "author": "Kim Eun Jin",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/eunjin0212/React-Study/issues"
+  },
+  "homepage": "https://github.com/eunjin0212/React-Study#readme",
+  "devDependencies": {
+    "@babel/core": "^7.12.3",
+    "@babel/preset-env": "^7.12.1",
+    "@babel/preset-react": "^7.12.1"
+  }
+}
