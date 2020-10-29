@@ -22,3 +22,5 @@
 - `npm` : `Node Package Manager`의 약자, `NodeJS`에서 사용할 수 있는 모듈들을 패키지화하여 모아둔 저장소 역할, 설치/관리를 수행할 수 있는 `CLI(명령 줄 인터페이스: Command-Line Interface)`를 제공
 
 1.  작업할 폴더 만들기
+  mkdir webpack-react-example && cd webpack-react-example ---> npm init -y
+ 이렇게 만들라고 하는데 나는 잘 모르겠고 그냥 일단 새로만들기 해서 폴더를 만든다
